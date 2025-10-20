@@ -1,8 +1,21 @@
 {
-  "name": "3 в ряд",
-  "short_name": "Match3",
-  "start_url": "/",
+  "name": "Match-3 Pro",
+  "short_name": "Match-3",
+  "description": "Классическая игра '3 в ряд'",
+  "start_url": ".",
   "display": "standalone",
   "background_color": "#f0f0f0",
-  "theme_color": "#2196f3"
+  "theme_color": "#333333",
+  "icons": [
+    {
+      "src": "assets/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
 }
