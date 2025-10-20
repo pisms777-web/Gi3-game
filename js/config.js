@@ -1,3 +1,5 @@
+// js/config.js
+
 // Размеры поля
 export const BOARD_WIDTH = 8;
 export const BOARD_HEIGHT = 8;
@@ -15,15 +17,17 @@ export const TILE_TYPES = {
     PURPLE: 5,
 };
 
-// Цвета для рендера
+// --- ИЗМЕНЕНИЕ ---
+// Возвращаем TILE_COLORS. Это будет основа для отрисовки.
 export const TILE_COLORS = {
-    [TILE_TYPES.EMPTY]: '#222',
+    [TILE_TYPES.EMPTY]: '#222', // Цвет для пустого места
     [TILE_TYPES.RED]: '#e74c3c',
     [TILE_TYPES.GREEN]: '#2ecc71',
     [TILE_TYPES.BLUE]: '#3498db',
     [TILE_TYPES.YELLOW]: '#f1c40f',
     [TILE_TYPES.PURPLE]: '#9b59b6',
 };
+// --------------------
 
 // --- Новое для геймплея ---
 // Типы бонусов
