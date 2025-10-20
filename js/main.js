@@ -1,3 +1,5 @@
+// js/main.js
+
 import { BOARD_WIDTH, BOARD_HEIGHT, TILE_SIZE } from './config.js';
 import GameState from './gamestate.js';
 import Board from './board.js';
