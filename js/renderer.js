@@ -1,7 +1,15 @@
-import { TILE_SIZE, TILE_COLORS, POWERUP_TYPES } from './config.js';
+// js/renderer.js
+
+import { 
+    TILE_SIZE, 
+    TILE_TYPES, 
+    TILE_COLORS, 
+    POWERUP_TYPES 
+} from './config.js';
 
 let _ctx = null; // Приватный контекст canvas
 
+// "Публичный" API
 const Renderer = {
     
     init(canvas) {
@@ -41,21 +49,24 @@ const Renderer = {
                 const px = x * TILE_SIZE;
                 const py = y * TILE_SIZE;
 
-                // Рисуем плитку
+                // --- ИЗМЕНЕНИЕ ---
+                // 1. Рисуем плитку (цветной квадрат)
                 _ctx.fillStyle = TILE_COLORS[tile.type];
                 _ctx.fillRect(px, py, TILE_SIZE, TILE_SIZE);
 
-                // --- РИСУЕМ БОНУС ---
+                // 2. Рисуем бонус (простые белые полосы)
                 if (tile.powerup !== POWERUP_TYPES.NONE) {
                     _ctx.fillStyle = 'rgba(255, 255, 255, 0.7)'; // Белая "метка"
+                    
                     if (tile.powerup === POWERUP_TYPES.ROCKET_H) {
-                        // Горизонтальная ракета -> рисуем 2 полоски по бокам
+                        // Горизонтальная ракета -> рисуем полосу посередине
                         _ctx.fillRect(px, py + TILE_SIZE / 2 - 5, TILE_SIZE, 10);
                     } else if (tile.powerup === POWERUP_TYPES.ROCKET_V) {
-                        // Вертикальная ракета -> рисуем 2 полоски сверху/снизу
+                        // Вертикальная ракета -> рисуем полосу посередине
                          _ctx.fillRect(px + TILE_SIZE / 2 - 5, py, 10, TILE_SIZE);
                     }
                 }
+                // --------------------
                 
                 // Обводка для наглядности
                 _ctx.strokeStyle = '#666';
